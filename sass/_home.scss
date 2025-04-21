@@ -1,0 +1,529 @@
+body.home {
+   overflow-x: hidden;
+
+   .home-container {
+
+      .section-hero {
+         // background-color: $color-primary-50;
+         position: relative;
+         background-image: linear-gradient(to right, rgba($color-grey-light-1, .9), rgba($color-primary-50, .9)), url(../img/contact-form-img.webp);
+         background-size: cover;
+         background-position: center;
+
+
+         // @media only screen and (max-width:$bp-medium) {
+         //    padding: 5rem .5rem;
+         // }
+
+         .hero {
+            padding: 0 3rem;
+            height: 94vh;
+            max-width: 100%;
+            margin: 0 auto;
+            text-align: center;
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+            height: 100vh;
+            // justify-content: center;
+
+            // flex-direction: column; // Stack items vertically
+            // padding: 5rem 1.2rem;
+
+
+            @media only screen and (min-width: $bp-monitor) {
+               height: auto;
+            }
+
+            @media only screen and (min-width: $bp-monitor) {
+               width: 160rem;
+               // height: 100%;
+            }
+
+            @media only screen and (max-width:$bp-larger) {
+               padding: 0rem 1.6rem;
+               // height: 100%;
+            }
+
+            @media only screen and (max-width:$bp-medium) {
+               padding: 0rem 1.2rem;
+               height: 90vh;
+            }
+
+            &-overlay {
+               height: 100%;
+               width: 100%;
+               background-color: $color-primary-900;
+               // background-image: linear-gradient(90deg, rgba(42, 47, 53, 0.278431) 70%, #2A2F35 0%);
+               clip-path: polygon(55% 0%, 100% 0%, 100% 100%, 70% 100%);
+               opacity: 1;
+               transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
+               height: 100%;
+               width: 100%;
+               top: 0;
+               left: 0;
+               position: absolute;
+
+               @media only screen and (max-width:$bp-big) {
+                  margin-top: 0rem;
+                  padding: 0rem;
+                  padding-bottom: 1rem;
+                  height: 100%;
+
+                  clip-path: polygon(75% 0%, 100% 0%, 100% 100%, 85% 100%);
+
+               }
+
+               @media only screen and (max-width:$bp-small) {
+                  display: none;
+               }
+            }
+
+            &-text {
+               text-align: left;
+               padding: 2rem;
+               width: 80%;
+               color: $color-primary-light;
+               // width: 100%;
+
+
+               @media only screen and (max-width:$bp-larger) {
+                  padding: .5rem;
+               }
+
+               @media only screen and (max-width:$bp-mid) {
+                  margin-top: 2rem;
+                  text-align: left;
+               }
+
+
+               @media only screen and (max-width:$bp-small-extra) {
+                  width: 99%;
+               }
+
+               &-main {
+                  font-size: 6rem;
+                  line-height: 1.1;
+                  font-weight: 700;
+                  // color: $color-primary-light;
+                  margin-bottom: 1rem;
+
+                  @media only screen and (max-width:$bp-larger) {
+                     font-size: 4rem;
+                  }
+
+                  @media only screen and (max-width:$bp-big) {
+                     margin-bottom: 1.5rem;
+                  }
+               }
+
+               &-mini {
+                  font-size: 2rem;
+                  line-height: 1.2;
+                  font-weight: 500;
+                  width: 80%;
+
+                  @media only screen and (max-width:$bp-larger) {
+                     width: 100%;
+                  }
+               }
+            }
+
+            &-btn {
+               margin-top: 2rem;
+               text-align: center;
+               display: flex;
+               justify-content: left;
+
+               a {
+                  text-decoration: none;
+               }
+            }
+
+            &-image {
+               width: 100%;
+               height: 100%;
+               object-fit: cover;
+               object-position: top;
+               border-radius: 10px;
+               z-index: 100;
+               padding-top: 2rem;
+               margin: 0 auto;
+               margin-top: 6rem;
+               max-width: 500px;
+
+               width: 50%;
+               // height: auto; 
+
+
+               @media only screen and (max-width:$bp-big) {
+                  visibility: hidden;
+                  width: 20%;
+               }
+
+               @media only screen and (max-width:$bp-small) {
+                  width: 10%;
+               }
+
+               @media only screen and (max-width:$bp-small-extra) {
+                  display: none;
+               }
+            }
+
+         }
+      }
+
+      .section-abouts {
+         padding: 15rem 3rem;
+         background-color: #fffefe;
+         height: max-content;
+         z-index: 900000;
+         position: relative;
+         text-align: center;
+
+         @media only screen and (max-width:$bp-larger) {
+            padding: 10rem 1.5rem;
+         }
+
+         @media only screen and (max-width:$bp-medium) {
+            padding: 5rem 1.5rem 5rem 1.5rem;
+         }
+
+         .abouts-container {
+            width: 80%;
+            padding: 0 2rem;
+            margin: 0 auto;
+            display: grid;
+            justify-content: center;
+            align-items: center;
+
+            @media only screen and (min-width: $bp-monitor) {
+               width: 160rem;
+            }
+
+            @media only screen and (max-width: $bp-medium) {
+               width: 100%;
+            }
+         }
+
+         &__texts {
+            padding: 0 2rem;
+
+            @media only screen and (max-width:$bp-larger) {
+               padding: 0 1rem;
+               padding-right: 0;
+            }
+
+            @media only screen and (max-width:$bp-medium) {
+               padding: 3rem 0 1rem 0;
+
+
+            }
+
+            .about-heading {
+               font-size: 3.7rem;
+               font-weight: 700;
+               margin-bottom: 1.2rem;
+
+               @media only screen and (max-width:$bp-larger) {
+                  font-size: 2.7rem;
+               }
+            }
+
+            .about-subtext {
+               font-size: 1.8rem;
+               font-weight: 400;
+
+               @media only screen and (max-width:$bp-mid) {
+                  font-size: 1.7rem;
+               }
+            }
+         }
+      }
+
+      .section-contact {
+         padding: 15rem 0;
+         background-image: linear-gradient(to right bottom, rgba($color-primary-300, .9), rgba($color-primary-400, .9));
+         background-color: $color-secondary-100;
+
+         @media only screen and (max-width:$bp-medium) {
+
+            padding: 10rem 0rem;
+         }
+
+
+         // @media only screen and (max-width:$bp-larger) {
+         //    padding: 2rem 1.5rem;
+         // }
+
+         // @media only screen and (max-width:$bp-medium) {
+         //    padding: 2rem 1.5rem 5rem 1.5rem;
+         // }
+
+         .row {
+            max-width: 114rem;
+            margin: 0 auto;
+
+
+            @media only screen and (max-width:$bp-medium) {
+               max-width: 55rem;
+               padding: 0 3rem;
+            }
+         }
+
+         .contact-container {
+            background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 50%, transparent 50%), url(../img/contact-form-img.webp);
+            background-size: cover;
+            border-radius: 3px;
+            box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.2);
+            background-position: center;
+
+
+            @media only screen and (max-width:$bp-big) {
+               background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 65%, transparent 65%), url(../img/contact-form-img.webp);
+               background-size: cover;
+            }
+
+
+            @media only screen and (max-width:$bp-medium) {
+               background-image: linear-gradient(to right, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 100%), url(../img/contact-form-img.webp);
+            }
+         }
+
+         .contact-form {
+            width: 50%;
+            padding: 6rem;
+
+            @media only screen and (max-width:$bp-big) {
+               width: 65%;
+            }
+
+            @media only screen and (max-width:$bp-medium) {
+               width: 100%;
+            }
+         }
+
+
+         // @media only screen and (max-width:$bp-big) {
+         //    padding: 0rem;
+         //    gap: 1rem;
+         // }
+
+         // @media only screen and (max-width:$bp-medium) {
+         //    grid-template-columns: 1fr;
+         //    grid-template-rows: repeat(2, min-content);
+         //    gap: 2rem;
+         // }
+      }
+
+      // &__texts {
+      //    padding: 0 2rem;
+
+      //    @media only screen and (max-width:$bp-larger) {
+      //       padding: 0 1rem;
+      //       padding-right: 0;
+      //    }
+
+      //    @media only screen and (max-width:$bp-medium) {
+      //       text-align: left;
+      //       padding: 3rem 0 1rem 0;
+
+      //       .tag {
+      //          text-align: left;
+      //       }
+      //    }
+
+      //    .testimonial-heading {
+      //       font-size: 3.7rem;
+      //       font-weight: 700;
+      //       margin-bottom: 1.2rem;
+
+      //       @media only screen and (max-width:$bp-larger) {
+      //          font-size: 2.7rem;
+      //       }
+      //    }
+
+      //    .testimonial-subtext {
+      //       font-size: 1.5rem;
+      //       font-weight: 400;
+
+
+      //       @media only screen and (max-width:$bp-mid) {
+      //          font-size: 1.7rem;
+      //       }
+      //    }
+      // }
+   }
+
+   .section-footer {
+      padding: 3rem 3rem;
+      background-color: $color-primary-900;
+      color: $color-grey-light-1;
+      height: max-content;
+
+      @media only screen and (max-width:$bp-larger) {
+         padding: 2rem 1.5rem;
+      }
+
+      @media only screen and (max-width:$bp-medium) {
+         padding: 2rem 1.5rem;
+      }
+
+      .footer-container {
+         max-width: 120rem;
+         padding: 0 2rem;
+         margin: 0 auto;
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+         font-size: 1.5rem;
+
+         @media only screen and (max-width:$bp-big) {
+            padding: 0rem;
+         }
+
+         .footer-bottom-section {
+            display: flex;
+            flex-direction: column;
+            width: max-content;
+            gap: 1rem;
+
+            @media only screen and (max-width:$bp-small) {
+               text-align: center;
+            }
+
+            .footer-socials {
+               display: grid;
+               font-size: 2.5rem;
+               grid-template-columns: repeat(auto-fit, minmax(1.5rem, 1fr));
+               gap: 1rem;
+               justify-content: center;
+               align-items: center;
+               height: max-content;
+
+               .social-icon {
+                  transition: all .3s ease;
+
+                  &:hover {
+                     transform: scale(1.1);
+                     cursor: pointer;
+                  }
+               }
+            }
+         }
+      }
+
+      &_bottom {
+         display: grid;
+         grid-template-columns: 1fr;
+         grid-template-rows: min-content 1fr;
+         justify-content: center;
+         align-items: center;
+         row-gap: 4rem;
+         padding: 4rem 0;
+
+         .footer-group {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            justify-content: space-between;
+
+            @media only screen and (max-width:$bp-small) {
+               grid-template-columns: 1fr;
+               grid-template-rows: auto;
+               gap: 3rem;
+            }
+         }
+
+         .footer-logo_container {
+            margin: 0 auto;
+
+            .footer-logo {
+               height: 2.5rem;
+            }
+         }
+
+
+      }
+   }
+
+}
+
+.modal {
+   color: $color-primary-900;
+   padding: 4rem 4rem 2rem 4rem;
+   opacity: 0;
+   visibility: hidden;
+   position: fixed;
+   top: 50%;
+   left: 50%;
+   height: max-content;
+   width: 70%;
+   transform: translate(-50%, -50%);
+   background-color: $color-primary-50;
+   box-shadow: rgba(0, 0, 0, 0.5) 0px 4px 6px;
+   border-radius: 10px;
+   z-index: 1000000;
+   transition: opacity .3s ease-in-out, visibility .3s ease-in-out;
+
+   @media only screen and (max-width:$bp-big) {
+      width: 80%;
+   }
+
+   @media only screen and (max-width:$bp-mid) {
+      width: 90%;
+   }
+
+   &.active,
+   &.openModal {
+      opacity: 1;
+      visibility: visible;
+      transition: opacity .3s ease-in-out, visibility .2s;
+   }
+
+   .close {
+      position: absolute;
+      padding: 1rem;
+      top: 0px;
+      right: 0px;
+      color: $color-primary-600;
+      font-size: 2.5rem;
+      font-weight: bold;
+      cursor: pointer;
+   }
+
+
+   .confirmation-btn_container {
+      display: flex;
+      gap: 1rem;
+      justify-content: end;
+      margin-top: 5rem;
+
+      .hero-btn-dark {
+         font-size: 1.2rem;
+         padding-left: 1rem;
+
+         &.cancel-cta {
+            color: $color-primary-800;
+            background: linear-gradient(to bottom, $color-primary-50, $color-primary-100);
+         }
+      }
+   }
+
+}
+
+.home-container.blur {
+   backdrop-filter: blur(1px);
+   filter: blur(1px);
+}
+
+.home-container.blur::before {
+   content: '';
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-color: rgba(0, 0, 0, 0.46);
+   z-index: 2222222;
+}
