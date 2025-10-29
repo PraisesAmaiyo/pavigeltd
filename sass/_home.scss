@@ -382,6 +382,52 @@ body.home {
             padding: 0rem;
          }
 
+         .footer-contact_info {
+
+
+            .logo-nav {
+               display: flex;
+               // justify-content: center;
+               align-items: center;
+               height: 6rem;
+               max-width: 20rem;
+               width: 70%;
+               padding: 0.5rem;
+               background-color: $color-primary-900;
+               border-radius: 0px 0px 35px 35px;
+               -webkit-border-radius: 0px 0px 35px 35px;
+               -moz-border-radius: 0px 0px 35px 35px;
+
+               .logo {
+                  height: 4rem;
+                  margin-top: 0.7rem;
+                  margin-bottom: 1.5rem;
+
+
+                  @media only screen and (max-width:$bp-big) {
+                     height: 3rem;
+                  }
+               }
+
+               .text-logo {
+                  font-size: 2rem;
+                  color: $color-grey-light-1;
+               }
+            }
+
+
+            &--links {
+               display: flex;
+               gap: 1.5rem;
+               align-items: center;
+
+               a {
+                  color: #fff;
+               }
+            }
+         }
+
+
          .footer-bottom-section {
             display: flex;
             flex-direction: column;
