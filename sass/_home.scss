@@ -9,6 +9,7 @@ body.home {
          background-image: linear-gradient(to right, rgba($color-grey-light-1, .9), rgba($color-primary-50, .9)), url(../img/contact-form-img.webp);
          background-size: cover;
          background-position: center;
+         overflow: hidden;
 
 
          // @media only screen and (max-width:$bp-medium) {
