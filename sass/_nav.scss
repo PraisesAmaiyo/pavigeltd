@@ -72,6 +72,8 @@
    margin: 0 auto;
    transition: all 0.3s ease;
 
+   overflow: hidden;
+
    @media only screen and (min-width: $bp-monitor) {
       width: 160rem;
    }

@@ -850,7 +850,8 @@ select {
   width: 100%;
   padding: 0 3rem;
   margin: 0 auto;
-  transition: all 0.3s ease; }
+  transition: all 0.3s ease;
+  overflow: hidden; }
   @media only screen and (min-width: 100em) {
     .navigation-header {
       width: 160rem; } }
