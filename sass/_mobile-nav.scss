@@ -15,6 +15,10 @@
    width: 4rem;
    color: $color-primary-50;
    display: block;
+
+   @media only screen and (max-width:$bp-small) {
+      color: $color-primary-900;
+   }
 }
 
 .icon-mobile-nav[name="close-outline"] {
@@ -25,7 +29,29 @@
    // right: 30px;
 }
 
+.mobile-btn_div {
+
+
+   display: none;
+
+   .nav-verification {
+      // display: none;
+
+      @media only screen and (max-width:$bp-mid) {
+         display: none;
+      }
+   }
+}
+
+
 @media only screen and (max-width:$bp-big) {
+   .mobile-btn_div {
+
+      display: flex;
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+
+   }
 
    .btn-mobile-nav {
       display: block;

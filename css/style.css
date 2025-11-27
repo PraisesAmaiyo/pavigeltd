@@ -1,3 +1,4 @@
+@charset "UTF-8";
 *,
 *::before,
 *::after {
@@ -75,7 +76,7 @@ body.home {
         height: 100%;
         width: 100%;
         background-color: #1c548c;
-        clip-path: polygon(55% 0%, 100% 0%, 100% 100%, 70% 100%);
+        clip-path: polygon(42% 0%, 100% 0%, 100% 100%, 70% 100%);
         opacity: 1;
         transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
         height: 100%;
@@ -83,20 +84,27 @@ body.home {
         top: 0;
         left: 0;
         position: absolute; }
+        @media only screen and (max-width: 62.5em) {
+          body.home .home-container .section-hero .hero-overlay {
+            margin-top: 0rem;
+            padding: 0rem;
+            padding-bottom: 1rem;
+            height: 100%;
+            clip-path: polygon(30% 0%, 100% 0%, 100% 100%, 85% 100%); } }
         @media only screen and (max-width: 50.3em) {
           body.home .home-container .section-hero .hero-overlay {
             margin-top: 0rem;
             padding: 0rem;
             padding-bottom: 1rem;
             height: 100%;
-            clip-path: polygon(75% 0%, 100% 0%, 100% 100%, 85% 100%); } }
+            clip-path: polygon(50% 0%, 100% 0%, 100% 100%, 85% 100%); } }
         @media only screen and (max-width: 30.5em) {
           body.home .home-container .section-hero .hero-overlay {
             display: none; } }
       body.home .home-container .section-hero .hero-text {
         text-align: left;
         padding: 2rem;
-        width: 80%;
+        width: 65%;
         color: #000; }
         @media only screen and (max-width: 62.5em) {
           body.home .home-container .section-hero .hero-text {
@@ -105,6 +113,9 @@ body.home {
           body.home .home-container .section-hero .hero-text {
             margin-top: 2rem;
             text-align: left; } }
+        @media only screen and (max-width: 30.5em) {
+          body.home .home-container .section-hero .hero-text {
+            width: 99%; } }
         @media only screen and (max-width: 25.5em) {
           body.home .home-container .section-hero .hero-text {
             width: 99%; } }
@@ -333,52 +344,87 @@ body.home {
         body.home .section-footer_bottom .footer-logo_container .footer-logo {
           height: 2.5rem; }
 
+/* Modal Styles */
 .modal {
-  color: #1c548c;
-  padding: 4rem 4rem 2rem 4rem;
-  opacity: 0;
-  visibility: hidden;
+  display: none;
   position: fixed;
-  top: 50%;
-  left: 50%;
-  height: max-content;
-  width: 70%;
-  transform: translate(-50%, -50%);
-  background-color: #effaff;
-  box-shadow: rgba(0, 0, 0, 0.5) 0px 4px 6px;
-  border-radius: 10px;
-  z-index: 1000000;
-  transition: opacity .3s ease-in-out, visibility .3s ease-in-out; }
-  @media only screen and (max-width: 50.3em) {
-    .modal {
-      width: 80%; } }
-  @media only screen and (max-width: 35.6em) {
-    .modal {
-      width: 90%; } }
-  .modal.active, .modal.openModal {
-    opacity: 1;
-    visibility: visible;
-    transition: opacity .3s ease-in-out, visibility .2s; }
-  .modal .close {
-    position: absolute;
-    padding: 1rem;
-    top: 0px;
-    right: 0px;
-    color: #2293ee;
-    font-size: 2.5rem;
-    font-weight: bold;
-    cursor: pointer; }
-  .modal .confirmation-btn_container {
-    display: flex;
-    gap: 1rem;
-    justify-content: end;
-    margin-top: 5rem; }
-    .modal .confirmation-btn_container .hero-btn-dark {
-      font-size: 1.2rem;
-      padding-left: 1rem; }
-      .modal .confirmation-btn_container .hero-btn-dark.cancel-cta {
-        color: #1c63b1;
-        background: linear-gradient(to bottom, #effaff, #daf3ff); }
+  z-index: 99999999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  align-items: center;
+  overflow-y: auto; }
+  .modal-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    position: relative;
+    max-height: 80vh;
+    /* ✅ keeps modal content within screen */
+    overflow-y: auto;
+    /* ✅ makes inner content scrollable */
+    -webkit-overflow-scrolling: touch;
+    /* Loader */
+    /* Result */ }
+    .modal-content .close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+      font-size: 20px; }
+    .modal-content .heading-midtext-wide {
+      color: #1c548c; }
+    .modal-content .loader {
+      border: 4px solid #f3f3f3;
+      border-top: 4px solid #38aff9;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      animation: spin 1s linear infinite;
+      margin: 20px auto; }
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg); } }
+    .modal-content #result {
+      text-align: center; }
+      .modal-content #result .verification-header {
+        background-color: #1c548c;
+        padding: 1.5rem;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        text-align: center;
+        color: #fff; }
+        .modal-content #result .verification-header .heading-midtext {
+          font-size: 1.8rem;
+          color: #fff; }
+        .modal-content #result .verification-header .heading-minitext {
+          font-size: 1.4rem; }
+      .modal-content #result .cert-details {
+        padding-top: 2rem;
+        text-align: left; }
+        .modal-content #result .cert-details .info {
+          background-color: #eef1f6;
+          box-shadow: 0 1px 2px rgba(34, 147, 238, 0.5);
+          padding: .5rem 1.5rem;
+          margin: 1rem 0; }
+          .modal-content #result .cert-details .info-label {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #000; }
+          .modal-content #result .cert-details .info-content {
+            text-transform: uppercase;
+            font-size: 1.5rem; }
+      .modal-content #result .btn-link {
+        color: #fff;
+        text-decoration: none;
+        justify-content: center; }
 
 .home-container.blur {
   backdrop-filter: blur(1px);
@@ -414,7 +460,7 @@ label {
 input,
 select,
 textarea {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   font-family: inherit;
   color: #000;
   padding: 1.5rem 2rem;
@@ -437,7 +483,7 @@ textarea {
   textarea:valid {
     outline: none;
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
-    border-bottom: 3px solid #55c57a; }
+    border-bottom: 3px solid #1c548c; }
     input:focus:invalid, input:valid:invalid,
     select:focus:invalid,
     select:valid:invalid,
@@ -486,12 +532,12 @@ select {
       width: 2rem;
       height: 2rem;
       border-radius: 100%;
-      border: 2px solid #000;
+      border: 2px solid #38aff9;
       background-color: #fff;
       margin-right: 1rem;
       cursor: pointer; }
     .checkbox-container input:checked {
-      background-color: #000;
+      background-color: #38aff9;
       box-shadow: inset 0 0 0 1.5px #ebfbee; }
     .checkbox-container label {
       cursor: pointer; }
@@ -522,7 +568,7 @@ select {
   padding: 1rem 4rem 1rem 1rem;
   border-radius: 100px;
   border: none;
-  box-shadow: inset 0 0 0 1px #000;
+  box-shadow: inset 0 0 0 1px #38aff9;
   text-decoration: none; }
   .hero-btn-dark:hover,
   .hero-btn-light:hover {
@@ -610,6 +656,11 @@ select {
 .heading-minitext {
   font-size: 1.5rem; }
 
+.heading-midtext {
+  font-size: 2.3rem;
+  font-weight: 600;
+  color: #0F7A89; }
+
 .tag {
   display: block;
   text-transform: uppercase;
@@ -621,6 +672,57 @@ select {
     .tag {
       margin-bottom: 1rem;
       text-align: center; } }
+
+.btn {
+  -webkit-transform: translateZ(0);
+  /* Force hardware acceleration */
+  transform: translateZ(0);
+  -webkit-tap-highlight-color: transparent;
+  /* Remove iOS tap highlight */
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+  padding: 10px 25px;
+  display: inline-block;
+  border-radius: 4px;
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  line-height: 22px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  white-space: nowrap; }
+  .btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 120%;
+    height: 120%;
+    border-radius: 20%;
+    /* Add vendor prefixes for scale & translate */
+    -webkit-transform: scale(0, 0) translateY(140%);
+    transform: scale(0, 0) translateY(140%);
+    -webkit-transform-origin: center center;
+    transform-origin: center center;
+    -webkit-transition: -webkit-transform 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+    transition: transform 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+    z-index: -1; }
+
+.primary-btn {
+  background-color: #1976d2;
+  color: #fff; }
+  .primary-btn::before {
+    background: #163355; }
+  .primary-btn:hover::before, .primary-btn:active::before {
+    -webkit-transform: scale(1.5, 1.5) translateY(0);
+    transform: scale(1.5, 1.5) translateY(0);
+    border-radius: 50%; }
 
 .hidden {
   display: none; }
@@ -639,12 +741,25 @@ select {
   width: 4rem;
   color: #effaff;
   display: block; }
+  @media only screen and (max-width: 30.5em) {
+    .icon-mobile-nav {
+      color: #1c548c; } }
 
 .icon-mobile-nav[name="close-outline"] {
   color: #1c548c;
   display: none; }
 
+.mobile-btn_div {
+  display: none; }
+  @media only screen and (max-width: 35.6em) {
+    .mobile-btn_div .nav-verification {
+      display: none; } }
+
 @media only screen and (max-width: 50.3em) {
+  .mobile-btn_div {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1.5rem; }
   .btn-mobile-nav {
     display: block;
     z-index: 99999999999; }
@@ -767,6 +882,19 @@ select {
     .navigation-header .logo-nav .text-logo {
       font-size: 2rem;
       color: #fff; }
+  .navigation-header .main-nav {
+    display: flex; }
+    @media only screen and (max-width: 35.6em) {
+      .navigation-header .main-nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem; } }
+    @media only screen and (max-width: 50.3em) {
+      .navigation-header .main-nav .nav-verification {
+        display: none; } }
+    @media only screen and (max-width: 35.6em) {
+      .navigation-header .main-nav .nav-verification {
+        display: block; } }
   .navigation-header .main-nav-list {
     list-style: none;
     display: flex;

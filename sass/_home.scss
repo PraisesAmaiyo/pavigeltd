@@ -55,7 +55,7 @@ body.home {
                width: 100%;
                background-color: $color-primary-900;
                // background-image: linear-gradient(90deg, rgba(42, 47, 53, 0.278431) 70%, #2A2F35 0%);
-               clip-path: polygon(55% 0%, 100% 0%, 100% 100%, 70% 100%);
+               clip-path: polygon(42% 0%, 100% 0%, 100% 100%, 70% 100%);
                opacity: 1;
                transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
                height: 100%;
@@ -64,13 +64,23 @@ body.home {
                left: 0;
                position: absolute;
 
+               @media only screen and (max-width:$bp-larger) {
+                  margin-top: 0rem;
+                  padding: 0rem;
+                  padding-bottom: 1rem;
+                  height: 100%;
+
+                  clip-path: polygon(30% 0%, 100% 0%, 100% 100%, 85% 100%);
+
+               }
+
                @media only screen and (max-width:$bp-big) {
                   margin-top: 0rem;
                   padding: 0rem;
                   padding-bottom: 1rem;
                   height: 100%;
 
-                  clip-path: polygon(75% 0%, 100% 0%, 100% 100%, 85% 100%);
+                  clip-path: polygon(50% 0%, 100% 0%, 100% 100%, 85% 100%);
 
                }
 
@@ -82,7 +92,7 @@ body.home {
             &-text {
                text-align: left;
                padding: 2rem;
-               width: 80%;
+               width: 65%;
                color: $color-primary-light;
                // width: 100%;
 
@@ -96,6 +106,10 @@ body.home {
                   text-align: left;
                }
 
+
+               @media only screen and (max-width:$bp-small) {
+                  width: 99%;
+               }
 
                @media only screen and (max-width:$bp-small-extra) {
                   width: 99%;
@@ -126,6 +140,7 @@ body.home {
                   @media only screen and (max-width:$bp-larger) {
                      width: 100%;
                   }
+
                }
             }
 
@@ -495,67 +510,128 @@ body.home {
 
 }
 
+
+// Certificate Verification
+/* Modal Styles */
 .modal {
-   color: $color-primary-900;
-   padding: 4rem 4rem 2rem 4rem;
-   opacity: 0;
-   visibility: hidden;
+   display: none;
    position: fixed;
-   top: 50%;
-   left: 50%;
-   height: max-content;
-   width: 70%;
-   transform: translate(-50%, -50%);
-   background-color: $color-primary-50;
-   box-shadow: rgba(0, 0, 0, 0.5) 0px 4px 6px;
-   border-radius: 10px;
-   z-index: 1000000;
-   transition: opacity .3s ease-in-out, visibility .3s ease-in-out;
+   z-index: 99999999;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background: rgba(0, 0, 0, 0.6);
+   justify-content: center;
+   align-items: center;
+   overflow-y: auto;
 
-   @media only screen and (max-width:$bp-big) {
-      width: 80%;
-   }
-
-   @media only screen and (max-width:$bp-mid) {
+   &-content {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
       width: 90%;
-   }
+      max-width: 400px;
+      text-align: center;
+      position: relative;
 
-   &.active,
-   &.openModal {
-      opacity: 1;
-      visibility: visible;
-      transition: opacity .3s ease-in-out, visibility .2s;
-   }
+      max-height: 80vh;
+      /* ✅ keeps modal content within screen */
+      overflow-y: auto;
+      /* ✅ makes inner content scrollable */
+      -webkit-overflow-scrolling: touch;
 
-   .close {
-      position: absolute;
-      padding: 1rem;
-      top: 0px;
-      right: 0px;
-      color: $color-primary-600;
-      font-size: 2.5rem;
-      font-weight: bold;
-      cursor: pointer;
-   }
+      .close {
+         position: absolute;
+         top: 10px;
+         right: 10px;
+         cursor: pointer;
+         font-size: 20px;
+      }
 
+      .heading-midtext-wide {
+         color: $color-primary-900;
+      }
 
-   .confirmation-btn_container {
-      display: flex;
-      gap: 1rem;
-      justify-content: end;
-      margin-top: 5rem;
+      /* Loader */
+      .loader {
+         border: 4px solid #f3f3f3;
+         border-top: 4px solid $color-primary-500;
+         border-radius: 50%;
+         width: 30px;
+         height: 30px;
+         animation: spin 1s linear infinite;
+         margin: 20px auto;
+      }
 
-      .hero-btn-dark {
-         font-size: 1.2rem;
-         padding-left: 1rem;
-
-         &.cancel-cta {
-            color: $color-primary-800;
-            background: linear-gradient(to bottom, $color-primary-50, $color-primary-100);
+      @keyframes spin {
+         100% {
+            transform: rotate(360deg);
          }
       }
-   }
 
+      /* Result */
+      #result {
+         // margin-top: 15px;
+         // font-weight: bold;
+
+         text-align: center;
+
+         .verification-header {
+            background-color: $color-primary-900;
+            padding: 1.5rem;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            text-align: center;
+            color: $color-grey-light-1;
+
+            .heading-midtext {
+               font-size: 1.8rem;
+               color: $color-grey-light-1;
+            }
+
+            .heading-minitext {
+               font-size: 1.4rem;
+            }
+
+         }
+
+         .cert-details {
+            padding-top: 2rem;
+            text-align: left;
+
+            .info {
+               background-color: $color-grey-light-2;
+               box-shadow: 0 1px 2px rgba($color-primary-600, .5);
+               padding: .5rem 1.5rem;
+               margin: 1rem 0;
+
+
+               &-label {
+                  font-size: 1.1rem;
+                  font-weight: 600;
+                  color: $color-primary-light;
+               }
+
+               &-content {
+                  text-transform: uppercase;
+                  font-size: 1.5rem;
+               }
+            }
+         }
+
+         & .btn-link {
+            color: #fff;
+            text-decoration: none;
+            justify-content: center;
+         }
+
+         // &
+      }
+
+
+
+   }
 }
 
 .home-container.blur {

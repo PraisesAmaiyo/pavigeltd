@@ -75,6 +75,10 @@
                   <a class="main-nav-link" href="#contact">Contact</a>
                </li>
             </ul>
+
+            <div class="nav-verification nav-bar">
+               <button id="openModalBtn" class="btn primary-btn">Verify Certificates</button>
+            </div>
          </nav>
 
 
@@ -88,17 +92,24 @@
             <i class="fa-brands fa-instagram social-icon"></i>
          </div> -->
 
-         <button class="btn-mobile-nav">
+         <div class="mobile-btn_div">
 
-            <!-- <i class="fa-solid fa-bars icon-mobile-nav" name="menu-outline"></i>
+            <div class="nav-verification">
+               <button id="openModalBtn_2" class="btn primary-btn">Verify Certificates</button>
+            </div>
+
+            <button class="btn-mobile-nav">
+
+               <!-- <i class="fa-solid fa-bars icon-mobile-nav" name="menu-outline"></i>
             <i class="fa-solid fa-xmark icon-mobile-nav dark" name="close-outline"></i> -->
 
-            <ion-icon class="icon-mobile-nav" name="menu-outline"></ion-icon>
+               <ion-icon class="icon-mobile-nav" name="menu-outline"></ion-icon>
 
 
 
-            <ion-icon class="icon-mobile-nav dark" name="close-outline"></ion-icon>
-         </button>
+               <ion-icon class="icon-mobile-nav dark" name="close-outline"></ion-icon>
+            </button>
+         </div>
 
       </header>
 
@@ -306,6 +317,73 @@
       </section>
 
    </main>
+
+   <!-- Modal -->
+   <form class="modal" id="certModal">
+      <div class="modal-content">
+         <span class="close">&times;</span>
+         <h1 class="heading-midtext-wide mb-2">Certificate Verification</h1>
+
+         <input type="text" id="certNumber" class="mb-2" placeholder="Enter Certificate Number" />
+
+         <!-- <br /><br /> -->
+         <button type="submit" id="verifyBtn" class="btn primary-btn">Verify</button>
+
+         <div id="loader" style="display:none;" class="loader"></div>
+
+         <!-- Error message (new) -->
+         <p id="certError" class="heading-midtext mt-2" style="color: red; display:none;"></p>
+
+         <!-- Verified Certificate info -->
+
+         <div class="heading-minitext mt-2" id="result">
+            <div class="verification-header">
+               <h1 class="heading-midtext">Verification Results</h1>
+               <p class="heading-minitext">Verification Successful. View Results Below</p>
+            </div>
+
+            <div class="cert-details">
+               <div class="info">
+                  <span class="info-label mb-1">Client Name</span>
+                  <h4 class="info-content clientName"></h4>
+               </div>
+
+               <div class="info">
+                  <span class="info-label mb-1">Certificate Number</span>
+                  <h4 class="info-content certificateNumber"></h4>
+               </div>
+               <div class="info">
+                  <span class="info-label mb-1">Equipment Name</span>
+                  <h4 class="info-content equipmentName"></h4>
+               </div>
+               <div class="info">
+                  <span class="info-label mb-1">Model Number</span>
+                  <h4 class="info-content modelNumber"></h4>
+               </div>
+               <div class="info">
+                  <span class="info-label mb-1">Serial Number</span>
+                  <h4 class="info-content serialNumber"></h4>
+               </div>
+               <div class="info">
+                  <span class="info-label mb-1">Date Calibrated</span>
+                  <h4 class="info-content dateCalibrated"></h4>
+               </div>
+               <div class="info">
+                  <span class="info-label mb-1">Due Date</span>
+                  <h4 class="info-content dueDate"></h4>
+               </div>
+               <!-- <a href="${link}" target="_blank" class="btn-link  mt-2">
+                  <button class="btn primary-btn center-button" type="button">
+                     View Document
+                  </button>
+               </a> -->
+
+            </div>
+         </div>
+
+
+      </div>
+   </form>
 
 
 </body>

@@ -118,6 +118,27 @@
       }
    }
 
+   .main-nav {
+      display: flex;
+
+      @media only screen and (max-width:$bp-mid) {
+         flex-direction: column;
+         align-items: center;
+         gap: 2rem;
+      }
+
+      .nav-verification {
+
+         @media only screen and (max-width:$bp-big) {
+            display: none;
+         }
+
+         @media only screen and (max-width:$bp-mid) {
+            display: block;
+         }
+      }
+   }
+
    .main-nav-list {
       list-style: none;
       display: flex;
