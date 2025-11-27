@@ -768,7 +768,8 @@ select {
   .navigation-header.nav-open {
     width: 100%;
     top: 0;
-    bottom: 0; }
+    bottom: 0;
+    flex-wrap: wrap; }
   .main-nav {
     background-color: rgba(239, 250, 255, 0.951);
     -webkit-backdrop-filter: blur(5px);
@@ -850,8 +851,7 @@ select {
   width: 100%;
   padding: 0 3rem;
   margin: 0 auto;
-  transition: all 0.3s ease;
-  overflow: hidden; }
+  transition: all 0.3s ease; }
   @media only screen and (min-width: 100em) {
     .navigation-header {
       width: 160rem; } }
