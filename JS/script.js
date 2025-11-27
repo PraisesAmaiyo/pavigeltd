@@ -33,25 +33,25 @@ const initialNavigation = document.querySelector('.initial-navigation');
 const stickyNavigation = document.querySelector('.sticky-nav');
 const sectionHero = document.querySelector('.section-hero');
 
-// document.addEventListener('DOMContentLoaded', function () {
-//   let lastScrollTop = 0;
+document.addEventListener('DOMContentLoaded', function () {
+  let lastScrollTop = 0;
 
-//   function handleScroll() {
-//     const scrollTop = window.scrollY;
+  function handleScroll() {
+    const scrollTop = window.scrollY;
 
-//     if (scrollTop > 40 && scrollTop > lastScrollTop) {
-//       navigationHeader.classList.add('sticky-nav');
-//       navigationHeader.classList.remove('initial-navigation');
-//     } else if (scrollTop <= 40 && scrollTop < lastScrollTop) {
-//       navigationHeader.classList.remove('sticky-nav');
-//       navigationHeader.classList.add('initial-navigation');
-//     }
+    if (scrollTop > 40 && scrollTop > lastScrollTop) {
+      navigationHeader.classList.add('sticky-nav');
+      navigationHeader.classList.remove('initial-navigation');
+    } else if (scrollTop <= 40 && scrollTop < lastScrollTop) {
+      navigationHeader.classList.remove('sticky-nav');
+      navigationHeader.classList.add('initial-navigation');
+    }
 
-//     lastScrollTop = scrollTop;
-//   }
+    lastScrollTop = scrollTop;
+  }
 
-//   window.addEventListener('scroll', handleScroll);
-// });
+  window.addEventListener('scroll', handleScroll);
+});
 
 document.addEventListener('DOMContentLoaded', function () {
   const navLinks = document.querySelectorAll('.main-nav-list li');
